@@ -1,13 +1,17 @@
 package sn.uimcec.intranet.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
@@ -19,10 +23,19 @@ public class User {
     private String fonction;
 
     private boolean enable;
-    private int enti_id;
-    private int servi;
-    private int agen_id;
-    private int senti_id;
+
+    @ManyToOne
+    @JoinColumn(name="entite_id")
+    private Entite entite;
+    @ManyToOne
+    @JoinColumn(name="direction_id")
+    private Direction direction;
+    @ManyToOne
+    @JoinColumn(name="agence_id")
+    private Agence agence;
+    @ManyToOne
+    @JoinColumn(name="pointservice_id")
+    private PointService pointService;
 
 
 
