@@ -64,5 +64,5 @@ public interface EntiteApi {
         // @ApiResponses(value = {
         //     @ApiResponse(code = 200, message = "La categorie a ete supprime")
         //})
-    void delete(@PathVariable("ientite") Integer id);
+    void delete(@PathVariable("identite") Integer id);
 }
