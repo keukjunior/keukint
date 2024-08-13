@@ -4,7 +4,7 @@ import sn.uimcec.intranet.dto.EntiteDto;
 
 import java.util.List;
 
-public interface Entite {
+public interface EntiteService {
 
 
     EntiteDto save(EntiteDto dto);

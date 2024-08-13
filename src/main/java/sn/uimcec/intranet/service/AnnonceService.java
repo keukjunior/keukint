@@ -10,7 +10,7 @@ public interface AnnonceService {
 
     AnnonceDto findById(Integer id);
 
-    AnnonceDto findByCode(String code);
+    List<AnnonceDto> findAllArticleByIdCategory(Integer idCategory);
 
     List<AnnonceDto> findAll();
 

@@ -1,8 +1,6 @@
 package sn.uimcec.intranet.service;
 
-import sn.uimcec.intranet.dto.AgenceDto;
 import sn.uimcec.intranet.dto.AnnonceDto;
-import sn.uimcec.intranet.dto.DirectionDto;
 
 import java.util.List;
 

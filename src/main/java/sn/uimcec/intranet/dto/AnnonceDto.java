@@ -3,22 +3,22 @@ package sn.uimcec.intranet.dto;
 import lombok.Builder;
 import lombok.Data;
 import sn.uimcec.intranet.model.Annonce;
-import sn.uimcec.intranet.model.PointService;
 
+
+import java.time.Instant;
 import java.util.Date;
-
-@Builder
 @Data
+@Builder
 public class AnnonceDto {
+
     private Integer idannonce;
     private String titre;
     private String contenu;
     private String document;
 
-    private Date datepub;
+    private Instant datepub;
 
     private CategorieDto categorieDto;
-
 
     public static AnnonceDto fromAnnonce(Annonce ser){
         if(ser == null)
@@ -30,7 +30,7 @@ public class AnnonceDto {
                 .document(ser.getDocument())
                 .datepub(ser.getDatepub())
                 .categorieDto(CategorieDto.fromCategorie(ser.getCategorie()))
-                        .build();
+                .build();
 
     }
 

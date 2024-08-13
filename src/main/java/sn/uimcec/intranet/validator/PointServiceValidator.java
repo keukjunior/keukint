@@ -21,11 +21,15 @@ public class PointServiceValidator {
         }
 
 
-        if (!StringUtils.hasLength(String.valueOf(pointServiceDto.getAgence()))) {
-            errors.add("Veuillez renseigner l'agence'");
+        if (!StringUtils.hasLength(pointServiceDto.getNom())) {
+            errors.add("Veuillez renseigner du guichet'");
         }
-        if (!StringUtils.hasLength(String.valueOf(pointServiceDto.getEntite()))) {
-            errors.add("Veuillez renseigner la Caisse");
+        if ( pointServiceDto.getAgence() == null ||  pointServiceDto.getAgence().getId() == null) {
+            errors.add("Veuillez selectionner une agence");
+        }
+
+        if ( pointServiceDto.getEntite() == null ||  pointServiceDto.getEntite().getId() == null) {
+            errors.add("Veuillez selectionner une entité");
         }
 
         return errors;

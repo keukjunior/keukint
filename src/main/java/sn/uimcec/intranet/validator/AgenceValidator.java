@@ -24,8 +24,8 @@ public class AgenceValidator {
 
 
 
-        if (!StringUtils.hasLength(String.valueOf(agenceDto.getEntite()))) {
-            errors.add("Veuillez renseigner la Caisse");
+        if ( agenceDto.getEntite() == null ||  agenceDto.getEntite().getId() == null) {
+            errors.add("Veuillez selectionner une entité");
         }
 
         return errors;

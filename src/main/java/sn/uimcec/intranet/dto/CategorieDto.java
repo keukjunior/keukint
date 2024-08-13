@@ -1,6 +1,6 @@
 package sn.uimcec.intranet.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Builder;
 import lombok.Data;
 import sn.uimcec.intranet.model.Categorie;
@@ -12,7 +12,7 @@ import java.util.List;
 public class CategorieDto {
     private Integer id;
     private String nom;
-    @JsonIgnore
+
     List<AnnonceDto> annonceDtoList;
 
     public static CategorieDto fromCategorie(Categorie cat){

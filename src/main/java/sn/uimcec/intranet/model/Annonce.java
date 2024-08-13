@@ -7,7 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.Instant;
+
 
 import java.io.Serializable;
 
@@ -18,14 +19,14 @@ import java.io.Serializable;
 @Entity
 public class Annonce implements Serializable {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer idannonce;
     private String titre;
     private String contenu;
     private String document;
 
-    private Date datepub;
-    @ManyToOne(fetch = FetchType.LAZY)
+    private Instant datepub;
+    @ManyToOne
     @JoinColumn(name="categorie_id")
     private Categorie  categorie;
 }
