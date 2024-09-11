@@ -50,6 +50,9 @@ public interface AnnonceApi {
    // })
     List<AnnonceDto> findAll();
 
+
+
+
     //@GetMapping(value = APP_ROOT + "/articles/historique/vente/{idArticle}", produces = MediaType.APPLICATION_JSON_VALUE)
    // List<LigneVenteDto> findHistoriqueVentes(@PathVariable("idArticle") Integer idArticle);
 
@@ -68,4 +71,7 @@ public interface AnnonceApi {
        //     @ApiResponse(code = 200, message = "L'article a ete supprime")
     //})
     void delete(@PathVariable("idannonce") Integer id);
+
+
+
 }

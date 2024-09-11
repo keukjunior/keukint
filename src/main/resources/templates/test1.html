@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tbody>
+<tr th:each="an:${listeannonce}">
+  <!-- <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td> -->
+  <td th:text="${an.titre}"></td>
+  <td th:text="${an.contenu}"></td>
+  <td th:text="${an.document}"></td>
+  <td th:text="${an.datepub}"></td>
+</tr>
+</tbody>
+</body>
+</html>

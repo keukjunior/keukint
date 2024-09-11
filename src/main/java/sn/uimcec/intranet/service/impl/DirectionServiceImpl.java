@@ -2,7 +2,8 @@ package sn.uimcec.intranet.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import sn.uimcec.intranet.dto.AnnonceDto;
+
+import sn.uimcec.intranet.dto.DirectionDto;
 import sn.uimcec.intranet.repository.DirectionRepository;
 import sn.uimcec.intranet.service.DirectionService;
 import sn.uimcec.intranet.validator.DirectionValidator;
@@ -16,6 +17,8 @@ public class DirectionServiceImpl implements DirectionService {
     public DirectionServiceImpl(DirectionRepository directionRepository){
         this.directionRepository=directionRepository;
     }
+
+
     @Override
     public DirectionDto save(DirectionDto dto) {
         List<String> errors = DirectionValidator.validate(dto);

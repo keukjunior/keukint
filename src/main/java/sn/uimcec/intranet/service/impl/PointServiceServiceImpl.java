@@ -1,12 +1,18 @@
 package sn.uimcec.intranet.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import sn.uimcec.intranet.dto.EntiteDto;
 import sn.uimcec.intranet.dto.PointServiceDto;
 import sn.uimcec.intranet.repository.PointServiceRepository;
 import sn.uimcec.intranet.service.PointService;
+import sn.uimcec.intranet.validator.EntiteValidator;
+import sn.uimcec.intranet.validator.PointServiceValidator;
 
 import java.util.List;
-
+@Service
+@Slf4j
 public class PointServiceServiceImpl implements PointService {
     private PointServiceRepository pointServiceRepository;
    @Autowired
@@ -16,7 +22,18 @@ public class PointServiceServiceImpl implements PointService {
    }
     @Override
     public PointServiceDto save(PointServiceDto dto) {
-        return null;
+
+        List<String> errors = PointServiceValidator.validate(dto);
+        if(!errors.isEmpty()){
+            log.error("Annonce n'est pas valided",dto);
+            //throw new InvalidEntityException("L'annonce n'est pas valide", ErrorCodes.ANNONCE_NOT_VALID,errors);
+        }
+
+        return  PointServiceDto.fromPointService(
+                pointServiceRepository.save(
+                        PointServiceDto.toPointService(dto)
+                )
+        );
     }
 
     @Override

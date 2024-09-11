@@ -4,7 +4,7 @@ package sn.uimcec.intranet.dto;
 import lombok.Builder;
 import lombok.Data;
 import sn.uimcec.intranet.model.Entite;
-import sn.uimcec.intranet.model.EntiteDto;
+
 @Builder
 @Data
 public class EntiteDto {
@@ -26,8 +26,8 @@ public class EntiteDto {
     public static Entite toEntite(EntiteDto dto) {
         Entite entite= new Entite();
         //agence.setId(dto.getId());
-        entite.getId(dto.getId());
-        entite.getNom(dto.getNom());
+        entite.setId(dto.getId());
+        entite.setNom(dto.getNom());
         //agence.setNom(dto.getNom());
         //agence.setEntite(EntiteDto.toEntite(dto.getEntite()));
         return entite;

@@ -1,5 +1,7 @@
 package sn.uimcec.intranet.validator;
 
+import sn.uimcec.intranet.dto.DirectionDto;
+
 import java.util.ArrayList;
 import java.util.List;
 

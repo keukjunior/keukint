@@ -9,6 +9,7 @@ import sn.uimcec.intranet.service.AnnonceService;
 import sn.uimcec.intranet.validator.AnnonceValidator;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 //import static org.hibernate.id.enhanced.HiLoOptimizer.log;
 @Service
@@ -52,7 +53,11 @@ public class AnnonceServiceImpl  implements AnnonceService {
 
     @Override
     public List<AnnonceDto> findAll() {
-        return null;
+
+        return annonceRepository.findAll()
+                .stream()
+                .map(AnnonceDto::fromAnnonce)
+                .collect(Collectors.toList());
     }
 
     @Override
