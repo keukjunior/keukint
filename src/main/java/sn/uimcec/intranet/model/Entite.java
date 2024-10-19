@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sn.uimcec.intranet.security.entities.AppUser;
 
 import java.io.Serializable;
 import java.util.List;
@@ -27,5 +28,5 @@ public class Entite  implements Serializable {
     private List<PointService> pointServiceList;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "entite")
-    private List<User> userList;
+    private List<AppUser> userList;
 }

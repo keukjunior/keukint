@@ -12,7 +12,9 @@ public class AgenceDto {
     private EntiteDto entite;
 
     public static AgenceDto fromAgence(Agence agence){
-
+        if(agence==null){
+            return null;
+        }
         return AgenceDto.builder()
                 .id(agence.getId())
                 .nom(agence.getNom())

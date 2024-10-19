@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sn.uimcec.intranet.security.entities.AppUser;
 
 import java.io.Serializable;
 import java.util.List;
@@ -19,11 +20,10 @@ public class Direction implements Serializable {
     private Integer id;
     private String nom;
 
-    private int identite;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="entite_id")
     private Entite entite;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "direction")
-    private List<User> userList;
+    private List<AppUser> userList;
 }

@@ -1,6 +1,7 @@
 package sn.uimcec.intranet.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sn.uimcec.intranet.dto.DirectionDto;
@@ -13,7 +14,7 @@ import java.util.List;
 @Slf4j
 public class DirectionServiceImpl implements DirectionService {
     private DirectionRepository directionRepository;
-
+    @Autowired
     public DirectionServiceImpl(DirectionRepository directionRepository){
         this.directionRepository=directionRepository;
     }

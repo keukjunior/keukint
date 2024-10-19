@@ -12,7 +12,7 @@ import java.util.List;
 
 import static sn.uimcec.intranet.utils.Constants.APP_ROOT;
 
-public interface PointServiceApi {
+public interface PointServiceApi1 {
 
 
     @PostMapping(value = APP_ROOT + "/pointservice/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

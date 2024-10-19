@@ -11,10 +11,12 @@ public class EntiteDto {
 
     private Integer id;
     private String nom;
-    private EntiteDto entite;
 
-    public static EntiteDto fromEntite( Entite entite){
 
+    public static EntiteDto fromEntite(Entite entite){
+        if(entite==null){
+            return null;
+        }
         return EntiteDto.builder()
                 .id(entite.getId())
                 .nom(entite.getNom())

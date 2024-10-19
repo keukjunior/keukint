@@ -6,14 +6,15 @@ import org.springframework.stereotype.Service;
 import sn.uimcec.intranet.dto.EntiteDto;
 import sn.uimcec.intranet.dto.PointServiceDto;
 import sn.uimcec.intranet.repository.PointServiceRepository;
-import sn.uimcec.intranet.service.PointService;
+
+import sn.uimcec.intranet.service.PointServiceApi;
 import sn.uimcec.intranet.validator.EntiteValidator;
 import sn.uimcec.intranet.validator.PointServiceValidator;
 
 import java.util.List;
 @Service
 @Slf4j
-public class PointServiceServiceImpl implements PointService {
+public class PointServiceServiceImpl implements PointServiceApi {
     private PointServiceRepository pointServiceRepository;
    @Autowired
    public PointServiceServiceImpl(PointServiceRepository pointServiceRepository){

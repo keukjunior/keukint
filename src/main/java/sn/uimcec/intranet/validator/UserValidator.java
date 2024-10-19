@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserValidator {
-
+/*
     public static List<String> validate(UserDto dto) {
         List<String> errors = new ArrayList<>();
 
@@ -38,29 +38,29 @@ public class UserValidator {
         if (!StringUtils.hasLength(dto.getPrenom())) {
             errors.add("Veuillez renseigner le prenom ");
         }
-        if (!StringUtils.hasLength(dto.getLogin())) {
+        if (!StringUtils.hasLength(dto.getUsername())) {
             errors.add("Veuillez renseigner le login");
         }
         if (!StringUtils.hasLength(dto.getPassword())) {
             errors.add("Veuillez renseigner le passeword");
         }
-        if (!StringUtils.hasLength(dto.getLogin())) {
+        if (!StringUtils.hasLength(dto.getUsername())) {
             errors.add("Veuillez renseigner la fonction");
         }
-        if (dto.isEnable()) {
+       *//* if (dto.isEnable()) {
             errors.add("Veuillez renseigner si ce champs est rensegné");
-        }
-        if ( dto.getAgenceDto() == null ||  dto.getAgenceDto().getId() == null) {
+      }*//*
+         *//* if ( dto.getAgenceDto() == null ||  dto.getAgenceDto().getId() == null) {
             errors.add("Veuillez selectionner une agence");
         }
 
         if ( dto.getEntiteDto() == null ||  dto.getEntiteDto().getId() == null) {
             errors.add("Veuillez selectionner une entité");
-        }
+        }*//*
 
 
 
 
         return errors;
-    }
+    }*/
 }

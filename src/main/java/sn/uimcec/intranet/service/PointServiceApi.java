@@ -5,7 +5,7 @@ import sn.uimcec.intranet.dto.PointServiceDto;
 
 import java.util.List;
 
-public interface PointService {
+public interface PointServiceApi {
     PointServiceDto save(PointServiceDto dto);
 
     PointServiceDto findById(Integer id);

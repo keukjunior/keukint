@@ -7,11 +7,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-@NoArgsConstructor
+/*@NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
-public class User implements Serializable {
+@Entity*/
+//public class User implements Serializable {/*
+public class User {/*
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
@@ -35,7 +36,7 @@ public class User implements Serializable {
     private Agence agence;
     @ManyToOne
     @JoinColumn(name="pointservice_id")
-    private PointService pointService;
+    private PointService pointService;*/
 
 
 

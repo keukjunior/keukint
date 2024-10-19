@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import sn.uimcec.intranet.dto.UserDto;
 import sn.uimcec.intranet.security.entities.AppUser;
 
 @Service
@@ -17,12 +18,16 @@ public class UserDetailServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AppUser appUser = accountService.loadUserByUsername(username);
+       // AppUser appUser = UserDto.toUser(accountService.loadUserByUsername(username));
         if(appUser ==null) throw new UsernameNotFoundException(String.format("User %s not found",username));
         String [] roles = appUser.getRoles().stream().map(u->u.getRole()).toArray(String[]::new);
         UserDetails userDetails = User
                 .withUsername(appUser.getUsername())
                 .password(appUser.getPassword())
-                .roles(roles).build();
+                .roles(roles)
+
+
+                .build();
         return userDetails;
     }
 }

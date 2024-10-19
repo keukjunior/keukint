@@ -13,9 +13,9 @@ import sn.uimcec.intranet.service.AnnonceService;
 
 import java.util.List;
 @Controller
-//@RequestMapping("/Intranet-UIMCEC")
+@RequestMapping("/Intranet-UIMCEC")
 public class AnnonceWeb {
-    @Autowired
+   @Autowired
     private AnnonceService annonceService;
 
     public AnnonceWeb(AnnonceService annonceService){
@@ -38,7 +38,42 @@ public class AnnonceWeb {
     };
 
 
-   @GetMapping("/")
+    @GetMapping(path = "/profile")
+    // @ApiOperation(value = "Renvoi la liste des articles", notes = "Cette methode permet de chercher et renvoyer la liste des articles qui existent "
+    //      + "dans la BDD", responseContainer = "List<ArticleDto>")
+    //@ApiResponses(value = {
+    //      @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
+    // })
+    public  String  findProfil(){
+        //List<AnnonceDto> annonceDtoList=annonceService.findAll();
+        //model.addAttribute("listeannonce",annonceDtoList);
+        // model.
+        //attribut(annonceDtoList,"listeannonce");
+        //return "listeannonce";
+        return "profile";
+        //return "accueil";
+    };
+
+
+    @GetMapping(path = "/logout")
+    // @ApiOperation(value = "Renvoi la liste des articles", notes = "Cette methode permet de chercher et renvoyer la liste des articles qui existent "
+    //      + "dans la BDD", responseContainer = "List<ArticleDto>")
+    //@ApiResponses(value = {
+    //      @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
+    // })
+    public  String  findlogout(){
+        //List<AnnonceDto> annonceDtoList=annonceService.findAll();
+        //model.addAttribute("listeannonce",annonceDtoList);
+        // model.
+        //attribut(annonceDtoList,"listeannonce");
+        //return "listeannonce";
+        return "logout";
+        //return "accueil";
+    };
+
+
+
+    @GetMapping("/")
    //  @ApiOperation(value = "Renvoi la liste des articles", notes = "Cette methode permet de chercher et renvoyer la liste des articles qui existent "
      //  + "dans la BDD", responseContainer = "List<ArticleDto>")
    // @ApiResponses(value = {

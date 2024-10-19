@@ -15,13 +15,14 @@ public interface DirectionApi {
 
 
 
-    @PostMapping(value = APP_ROOT + "/annonces/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @Operation(summary = "Enregistrer une annonce", description = "Cette methode permet d'enregistrer ou modifier une direction")
+    @PostMapping(value = APP_ROOT + "/direction/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Enregistrer une directio,n", description = "Cette methode permet d'enregistrer ou modifier une direction")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",description = "L'objet direction cree / modifie"),
             @ApiResponse(responseCode = "400", description = "L'objet direction n'est pas valide")
     })
     DirectionDto save(@RequestBody DirectionDto dto);
+    //DirectionDto save(DirectionDto dto);
 
     @GetMapping(value = APP_ROOT + "/direction/{iddirection}", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Rechercher une annonce par ID", description = "Cette methode permet de chercher une direction par son ID")

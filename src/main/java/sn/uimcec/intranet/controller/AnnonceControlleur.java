@@ -2,8 +2,10 @@ package sn.uimcec.intranet.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sn.uimcec.intranet.controller.api.AnnonceApi;
 import sn.uimcec.intranet.dto.AnnonceDto;
@@ -11,6 +13,7 @@ import sn.uimcec.intranet.service.AnnonceService;
 
 import java.util.List;
 @RestController
+//@RequestMapping("/Intranet-UIMCEC")
 public class AnnonceControlleur  implements AnnonceApi {
 
     private AnnonceService annonceService;

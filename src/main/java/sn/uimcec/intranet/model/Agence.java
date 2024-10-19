@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sn.uimcec.intranet.security.entities.AppUser;
 
 import java.io.Serializable;
 import java.util.List;
@@ -25,5 +26,5 @@ public class Agence  implements Serializable {
     private Entite entite;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "agence")
-    private List<User> userList;
+    private List<AppUser> userList;
 }

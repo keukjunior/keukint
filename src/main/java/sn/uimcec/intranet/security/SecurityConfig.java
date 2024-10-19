@@ -25,7 +25,6 @@ public class SecurityConfig {
 
         // 2 l'accée est permise à tt le monde
        // httpSecurity.formLogin().loginPage("/index").permitAll();
-
         httpSecurity.formLogin().loginPage("/login").permitAll();
 
 
@@ -40,6 +39,7 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests().requestMatchers("/user/**").hasRole("USER");
         httpSecurity.authorizeHttpRequests().requestMatchers("/admin/**").hasRole("ADMIN");
         httpSecurity.authorizeHttpRequests().requestMatchers("/dc/**").hasRole("DC");
+
 
         //httpSecurity.authorizeHttpRequests().requestMatchers("/../img/bg-1.jpg").permitAll();
 

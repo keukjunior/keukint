@@ -39,4 +39,7 @@ public class PointServiceDto {
         dire.setEntite(EntiteDto.toEntite(dto.getEntite()));
         return dire;
     }
+
+    /*public static PointServiceDto fromPointService(sn.uimcec.intranet.service.PointService pointService) {
+    }*/
 }

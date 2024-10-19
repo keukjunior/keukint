@@ -1,6 +1,7 @@
 package sn.uimcec.intranet.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 import sn.uimcec.intranet.controller.api.CategorieApi;
 import sn.uimcec.intranet.dto.AnnonceDto;
@@ -11,9 +12,9 @@ import java.util.List;
 
 @RestController
 public class CategorieController implements CategorieApi {
-
-    private CategorieService categorieService;
     @Autowired
+    private CategorieService categorieService;
+
     public CategorieController(CategorieService categorieService){
         this.categorieService=categorieService;
     }

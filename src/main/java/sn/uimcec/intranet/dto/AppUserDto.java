@@ -1,43 +1,36 @@
 package sn.uimcec.intranet.dto;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-
-import sn.uimcec.intranet.model.*;
-import sn.uimcec.intranet.security.entities.AppRole;
 import sn.uimcec.intranet.security.entities.AppUser;
+import sn.uimcec.intranet.model.PointService;
 
 import java.util.List;
-
-/*@Builder
+@Builder
 @Data
-@AllArgsConstructor*/
-public class UserDto {
+public class AppUserDto {
 
-
-   /* private String id;
+    private String id;
     private String nom;
     private String prenom;
     private String username;
     private String password;
     private String email;
-    //private String fonction;
+    private FonctionDto fonctionDto;
 
-    //private boolean enable;
-   // private EntiteDto entiteDto;
-    //private DirectionDto directionDto;
-    //private AgenceDto agenceDto;
-    //private PointServiceDto pointServiceDto;
+    private boolean enable;
+    private EntiteDto entiteDto;
+    private DirectionDto directionDto;
+    private AgenceDto agenceDto;
+    private PointServiceDto pointServiceDto;
 
     private List<AppRoleDto> rolesdto;
 
 
-    public static UserDto fromUser(AppUser ser){
+    public static AppUserDto fromUser(AppUser ser){
         if(ser == null)
             return null;
-        return UserDto.builder()
+        return AppUserDto.builder()
                 .id(ser.getUserId())
                 .nom(ser.getNom())
                 .prenom(ser.getPrenom())
@@ -45,16 +38,16 @@ public class UserDto {
                 .password(ser.getPassword())
                 //.rolesdto(ser)
                 //.fonction(ser.getFonction())
-                //.enable(ser.isEnable())
-                //.entiteDto(EntiteDto.fromEntite(ser.getEntite()))
-                //.directionDto(DirectionDto.fromDirection(ser.getDirection()))
-                //.agenceDto(AgenceDto.fromAgence(ser.getAgence()))
-               // .pointServiceDto(PointServiceDto.fromPointService(ser.getPointService()))
+                .fonctionDto(FonctionDto.fromFonction(ser.getFonction()))
+                .entiteDto(EntiteDto.fromEntite(ser.getEntite()))
+                .directionDto(DirectionDto.fromDirection(ser.getDirection()))
+                .agenceDto(AgenceDto.fromAgence(ser.getAgence()))
+                //.pointServiceDto(PointServiceDto.fromPointService(ser.getPointService()))
                 .build();
 
     }
 
-    public static AppUser toUser(UserDto dto){
+    public static AppUser toUser(AppUserDto dto){
         if(dto == null)
             return null;
         AppUser dire = new AppUser();
@@ -72,5 +65,5 @@ public class UserDto {
        // dire.setAgence(AgenceDto.toAgence(dto.getAgenceDto()));
         //dire.setPointService(PointServiceDto.toPointService(dto.getPointServiceDto()));
         return dire;
-    }*/
+    }
 }

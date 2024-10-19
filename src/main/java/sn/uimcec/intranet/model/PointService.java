@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sn.uimcec.intranet.security.entities.AppUser;
 
 import java.io.Serializable;
 import java.util.List;
@@ -19,15 +20,16 @@ public class PointService implements Serializable {
     private Integer id;
     private String nom;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+
+
+    @ManyToOne
     @JoinColumn(name="agence_id")
     private Agence agence;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="entite_id")
-
     private Entite entite;
 
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pointService")
-    private List<User> userList;
+    private List<AppUser> userList;
 }

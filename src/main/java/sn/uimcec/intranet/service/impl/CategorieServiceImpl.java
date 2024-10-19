@@ -1,6 +1,7 @@
 package sn.uimcec.intranet.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sn.uimcec.intranet.dto.AnnonceDto;
 import sn.uimcec.intranet.dto.CategorieDto;
@@ -13,7 +14,7 @@ import java.util.List;
 @Service
 @Slf4j
 public class CategorieServiceImpl implements CategorieService {
-
+    @Autowired
     private CategorieRepository categorieRepository;
 
     public CategorieServiceImpl(CategorieRepository categorieRepository){

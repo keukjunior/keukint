@@ -41,7 +41,8 @@ public class AnnonceServiceImpl  implements AnnonceService {
 
     @Override
     public AnnonceDto findById(Integer id) {
-        return null;
+
+        return AnnonceDto.fromAnnonce(annonceRepository.findById(id).get());
     }
 
     @Override
